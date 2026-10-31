@@ -1,0 +1,20 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_", "caughtErrorsIgnorePattern": "^_" }
+    ],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "react-hooks/exhaustive-deps": "error"
+  },
+  "ignorePatterns": ["node_modules/", ".next/", "prisma/*.ts", "next-env.d.ts"],
+  "overrides": [
+    {
+      "files": ["scripts/**/*.ts", "prisma/**/*.ts", "tests/**/*.ts"],
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}
