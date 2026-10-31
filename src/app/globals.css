@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      'Segoe UI',
+      Roboto,
+      'Helvetica Neue',
+      Arial,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-zinc-50 text-zinc-900;
+  }
+
+  /* Numbers are tabular everywhere in data surfaces. */
+  table,
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    @apply bg-teal-100;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply block w-full rounded border border-zinc-300 bg-white px-2.5 py-1.5 text-sm text-zinc-900 placeholder:text-zinc-400 shadow-none focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent;
+  }
+
+  .card-panel {
+    @apply rounded border border-zinc-200 bg-white;
+  }
+
+  .form-error-summary {
+    @apply rounded border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+}
